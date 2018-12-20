@@ -1,5 +1,3 @@
-### TIL
-Today I Learned
 ###
 ###
 ## 이용 방법
