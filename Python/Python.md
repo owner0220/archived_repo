@@ -34,7 +34,7 @@
 - ## Chatbot
   - Offline
     - [밥메뉴 말해주는 chatbot](example/offline_chatbot_01.py)
-    - [가게 전화번호 말해줘(feat. 딕셔너리)]((example/offline_chatbot_02.py))
+    - [가게 전화번호 말해줘(feat. 딕셔너리)](example/offline_chatbot_02.py)
     - [미세먼지 상태 출력](example/offline_chatbot_03.py)
     - [로또 자동번호 발권기](example/offline_chatbot_04.py)
 
