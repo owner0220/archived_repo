@@ -4,7 +4,7 @@
 
 - ## 기본 문법
 
-  - [print](Python/PYTHON_print.py)
+  - [print](example/PYTHON_print.py)
 
 
 
@@ -12,36 +12,36 @@
 
 - ## PYTHON_module_사용
   - **csv**
-    - [읽기](Python/module_os_01.py)
-    - [쓰기](Python/module_Faker.py)
-  - [**faker**](Python/module_Faker.py)
+    - [읽기](example/module_os_01.py)
+    - [쓰기](example/module_Faker.py)
+  - [**faker**](example/module_Faker.py)
 
 
 
-  - [**os**](Python/module_os_01.py)
+  - [**os**](example/module_os_01.py)
 
 
 
-  - [**SMTP**](Python/module_SMTP_01.py)
+  - [**SMTP**](example/module_SMTP_01.py)
 
 
 
-  - [**webbrowser**](Python/module_webbrowser_01.py)
+  - [**webbrowser**](example/module_webbrowser_01.py)
 
 
 
 
 - ## Chatbot
   - Offline
-    - [밥메뉴 말해주는 chatbot](Python/offline_chatbot_01.py)
-    - [가게 전화번호 말해줘(feat. 딕셔너리)]((Python/offline_chatbot_02.py))
-    - [미세먼지 상태 출력](Python/offline_chatbot_03.py)
-    - [로또 자동번호 발권기](Python/offline_chatbot_04.py)
+    - [밥메뉴 말해주는 chatbot](example/offline_chatbot_01.py)
+    - [가게 전화번호 말해줘(feat. 딕셔너리)]((example/offline_chatbot_02.py))
+    - [미세먼지 상태 출력](example/offline_chatbot_03.py)
+    - [로또 자동번호 발권기](example/offline_chatbot_04.py)
 
 
 
   - Online
-    - [공공데이터API 활용 미세먼지 예보](Python/online_chatbot_01.py)
+    - [공공데이터API 활용 미세먼지 예보](example/online_chatbot_01.py)
 
 
 
