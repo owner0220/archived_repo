@@ -48,7 +48,7 @@
 
 
 - ## Crawling
-  - [다음 검색 순위 긁어오기](Python/crawling_01.py)
-  - [네이버 검색 순위 긁어오기](Python/crawling_02.py)
-  - [게시판 제목 긁어오기](Python/crawling_03.py)
-  - [구글 검색 결과 제목 긁어오기](Python/crawling_04.py)
+  - [다음 검색 순위 긁어오기](example/crawling_01.py)
+  - [네이버 검색 순위 긁어오기](example/crawling_02.py)
+  - [게시판 제목 긁어오기](example/crawling_03.py)
+  - [구글 검색 결과 제목 긁어오기](example/crawling_04.py)
