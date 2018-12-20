@@ -31,7 +31,9 @@ Doc 보기를 습관화하자
 > **w3schools** - Python If ... Else 
 > <https://www.w3schools.com/python/python_conditions.asp>
 
-### **if**
+
+
+## **if**
 These conditions can be used in several ways, most commonly in "if statements" and loops.
 An "if statement" is written by using the if keyword.
 
@@ -42,7 +44,7 @@ if b > a:
   print("b is greater than a")
 ```
 
-### **Elif**
+## **Elif**
 The elif keyword is pythons way of saying "if the previous conditions were not true, then try this condition".
 
 ``` python
@@ -56,7 +58,7 @@ elif a == b:
 In this example a is equal to b, so the first condition is not true, but the elif condition is true, so we print to screen that "a and b are equal".
 
 
-### **Else**
+## **Else**
 The else keyword catches anything which isn't caught by the **preceding conditions.**
 
 ``` python
