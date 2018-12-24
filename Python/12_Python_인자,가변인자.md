@@ -15,3 +15,11 @@
 
 ※ 가변인자나 정의 되지 않은 인자를 사용할 때는 * 또는 **를 사용한다.
 
+**예시***
+``` python
+def calc(a,b):
+  return a+b,a*b
+  
+args=(1,2)
+calc(*args)
+```
