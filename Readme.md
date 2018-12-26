@@ -1,4 +1,4 @@
-# Python 모듈 : Selenium
+# Python
 ## 모듈_Selenium
 ### autocheck_browser_ver.py
 - 실행시 파이썬 플랫폼인 플라스크 서버가 동작하면서 동작을 확인할 수 있습니다.
