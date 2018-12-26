@@ -55,7 +55,8 @@ def first():
     return "출석체크서버 동작!!!"
 
 #logid와 pwd를 url로 전달해 로그인
-@app.route('/in/<string:logid>/<string:pwd>')
+#logid와 pwd를 ,로 구분해 전달
+@app.route('/in/<string:logid>,<string:pwd>')
 def inck(logid,pwd):
     login(logid,pwd)
 
