@@ -6,18 +6,14 @@
 
 폴더 안에는
 
-규칙 : 호출 혹은 임포트 시
-
 - 입력
 - 출력
 - 결과
 - 사용 예시
 
-규칙으로 정리된 폴더에
+규칙으로 정리된 Markdown (.md) 파일과
 
-
-
-Markdown (.md) 파일과 예시가 기록된 Python(.py) 파일로 저장 
+예시가 기록된 Python(.py) 파일로 저장 되어 있다.
 
 
 
@@ -37,8 +33,8 @@ Markdown (.md) 파일과 예시가 기록된 Python(.py) 파일로 저장
 - #### Built-in Constants
 - #### Constants added by the site module
 - #### Built-in Types
-- #### Truth Value Testing
-    - [ ] Boolean Operations — and, or, not
+- #### ~~Truth Value Testing~~
+    - [x] ~~Boolean Operations — and, or, not~~
 - #### Comparisons
     - [ ] Numeric Types — int, float, complex
 - #### Iterator Types
