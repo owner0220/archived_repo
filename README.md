@@ -19,6 +19,20 @@
 
 Markdown (.md) 파일과 예시가 기록된 Python(.py) 파일로 저장 
 
+
+
+아래 목차를 만들기 위해서
+
+1. 파이썬 Reference 목차를 크롤링해서 list.txt 에 저장
+2. mklist.py로 마크다운 형식으로 편집하기 좋은 상태로 변경해서 result.txt 로 저장
+3. mkdir.py로 대주제 안의 소주제를 dir로 만들어 주었다.
+
+프로젝트를 clone 해서 python 으로 실행시키면 결과를 확인 할 수 있다.
+
+
+
+
+
 - #### ﻿Built-in Functions
 - #### Built-in Constants
 - #### Constants added by the site module
