@@ -35,7 +35,7 @@
 - #### Built-in Types
 - #### ~~Truth Value Testing~~
     - [x] ~~Boolean Operations — and, or, not~~
-- #### Comparisons
+- #### ~~Comparisons~~
     - [ ] Numeric Types — int, float, complex
 - #### Iterator Types
     - [ ] Sequence Types — list, tuple, range
