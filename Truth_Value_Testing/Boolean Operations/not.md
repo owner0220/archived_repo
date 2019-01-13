@@ -4,21 +4,19 @@
 
 ### 부울 연산자 - not
 
-### ` not x`
+- 사용법 :
 
-- 과정 :
+  ` not x`
 
-​	if *x* is false, then `True`, else `False`
-
-​	x를 True / False 로 생각했을 때 반대의 결과를 내 놓는다.
+  인자 앞에 not을 붙여 사용한다.
 
 - 기능 :
 
-  논리 판단
+  x를 True / False 로 생각했을 때 그 결과의 반대를 내 놓는다.
 
-- 리턴 :
+- 리턴값 :
 
-  bool 타입 리턴
+  bool 타입
 
 ```python
 print(not 3) 	# False를 출력.

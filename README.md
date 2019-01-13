@@ -6,10 +6,9 @@
 
 폴더 안에는
 
-- 입력
-- 출력
-- 결과
-- 사용 예시
+- 사용법
+- 기능
+- 리턴값
 
 규칙으로 정리된 Markdown (.md) 파일과
 
@@ -38,7 +37,7 @@
 - #### ~~Comparisons~~
     - [ ] Numeric Types — int, float, complex
 - #### Iterator Types
-    - [ ] Sequence Types — list, tuple, range
+    - [x] ~~Sequence Types — list, tuple, range~~
     - [ ] Text Sequence Type — str
     - [ ] Binary Sequence Types — bytes, bytearray, memoryview
     - [ ] Set Types — set, frozenset

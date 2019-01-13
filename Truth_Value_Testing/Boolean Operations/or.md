@@ -4,23 +4,21 @@
 
 ### 부울 연산자 - or
 
-### ` x or y`
+- 사용법 :
 
-- 과정 : 
+  ` x or y`
 
-  if x is false, then y, else x
-
-  만약  x가 False 이면, y를
-
-  이외 경우에는 x를 return
+  두 인자 사이에 넣어서 사용한다.
 
 - 기능 :
 
-  논리 판단
+  - 만약  x가 False 이면, y를 리턴 
 
-- 리턴 :
+    이외 경우에는 x를 리턴
 
-  둘 중 먼저 True 인 인자를 그대로 리턴
+- 리턴값 :
+
+  리턴되는 인자형태
 
 ```python
 print(2 or 3)   # 2를 출력한다.
