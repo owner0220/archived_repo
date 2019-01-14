@@ -41,7 +41,7 @@
     - [ ] Text Sequence Type — str
     - [ ] Binary Sequence Types — bytes, bytearray, memoryview
     - [ ] Set Types — set, frozenset
-    - [ ] Mapping Types — dict
+    - [x] Mapping Types — dict 함수 메서드 정리 업뎃 필요
 - #### Context Manager Types
 - #### Other Built-in Types
 - #### Special Attributes
