@@ -17,7 +17,7 @@
 
 ```html
 <!--첫번째 정답-->
-<a href=" https://www.ssafy.com/"><input type="button" href=" https://www.ssafy.com/"></a>
+<a href=" https://www.ssafy.com/"><input type="button"></a>
 
 <!--두번째 정답-->
 <button type="button" onclick="window.open('http://www.ssafy.com') ">
@@ -47,7 +47,8 @@
    Image 폴더 안에 my_photo를띄워주는 a 태그 경로를 넣으시오.
 
 ```html
-<a href="../../Image/my_photo.png">내 사진</a>
+<a href="../Image/my_photo.png">내 사진</a>
+<a href="/SSAFY/Image/my_photo.png">내 사진</a>
 ```
 
 
