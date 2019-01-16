@@ -1,9 +1,0 @@
-a='abcd'
-print(a)
-print(list(a))
-b=(1,2,3)
-print(b)
-print(list(b))
-c=(1,2,[2,3],[3,4],'asb')
-print(c)
-print(list(c))
