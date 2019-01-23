@@ -40,7 +40,7 @@ my_runner = Runner()
 
 -  Runner클래스의 인스턴스인 my_runner를 이용해서 쓰러지지 않고 최종 목적지까지 가는 코드를 작성하세요.
 
-정답 :
+**정답 :**
 
 ```python
 while (my_runner.hp > 0 and my_runner.distance > 0):
