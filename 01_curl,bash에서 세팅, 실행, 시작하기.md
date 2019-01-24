@@ -20,7 +20,7 @@ def hello():
 
 
 
-#### 2. cmd 창 or bash창 에서 입력하고 실행하는 코드
+#### 2. bash창 에서 입력하고 실행하는 코드
 
 ```bash
 FLASK_APP=위 파이썬파일이름.py flask run --host=아이피주소 --port=포트번호
