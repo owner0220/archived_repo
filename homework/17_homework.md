@@ -10,7 +10,7 @@
 
 
 
-**정답 : migrate**
+**정답 : migration**
 
 
 
