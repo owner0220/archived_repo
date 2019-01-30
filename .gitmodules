@@ -1,6 +1,0 @@
-[submodule "project/02_web"]
-	path = project/02_web
-	url = https://github.com/owner0220/02_web.git
-[submodule "project/01_python"]
-	path = project/01_python
-	url = https://github.com/owner0220/01_python.git
