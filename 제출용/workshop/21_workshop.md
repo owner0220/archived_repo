@@ -41,7 +41,9 @@ Choice ; content 내용 CharField
 ```html
 <h1>{{question.title}}</h1>
 <ul>
-    <li>한식 : {{question.comment_set.votes}}표</li>
+    {%for comment in question.choice_set.all%}
+    <li>{{comment.content}} : {{comment.votes}}표</li>
+    {%endfor%}
 </ul>
 ```
 
