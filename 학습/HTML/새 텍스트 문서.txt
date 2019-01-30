@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		body > tr:nth-of-child(2) {
+			
+		}
+		</style>
+	</head>
+	<body>
+		<tr>점심메뉴</tr>
+		<tr> 
+			<td></td>
+			<td>월</td>
+			<td>화</td>
+			<td>수</td>
+		</tr>
+		<tr>
+			<td>특식</td>
+			<td>초밥</td>
+			<td>바베큐</td>
+			<td>삼겹살</td>
+		</tr>
+		<tr>
+			<td>한식</td>
+			<td>육개장</td>
+			<td>미역국</td>
+			<td>삼계탕</td>
+		</tr>
+	</body>
+
+</html>
