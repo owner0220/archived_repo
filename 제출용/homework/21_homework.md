@@ -51,6 +51,6 @@ urlpatterns=[
 **정답 :**
 
 ```html
-action="/{{question.pk}}/comments/create/"
+action="/question/{{question.id}}/comments/create/"
 ```
 

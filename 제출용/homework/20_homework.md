@@ -14,7 +14,7 @@
 
 ```python
 class Student(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    class = models.ForeignKey(Class, on_delete=models.CASCADE)
     content = models.CharField(max_length=50)
     
     def __srt__(self):
@@ -27,7 +27,7 @@ class Student(models.Model):
 
 2.  Question 모델과 Comment 모델은 1:N관계를 가지고 있다.
 
-   A = Question.objects.get(id=id)
+   **A = Question.objects.get(id=id)**
 
    위의 코드가 있을때 views.py에서 Comment를 모두 가져오기 위한 코드를 작성하세요.
 
@@ -38,7 +38,7 @@ class Student(models.Model):
 **정답 :**
 
 ```python
-comment = Comment.objects.filter(question=A.id)
+A.comment_set.all()
 ```
 
 
@@ -54,7 +54,7 @@ comment = Comment.objects.filter(question=A.id)
 **정답 : **
 
 ```python
-id
+Movie_id
 ```
 
 
