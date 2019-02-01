@@ -44,7 +44,7 @@ my_runner = Runner()
 
 ```python
 while (my_runner.hp > 0 and my_runner.distance > 0):
-    if 0 < my_runner.hp <=5:
+    if 0 < my_runner.hp <=6:
         my_runner.walk_per_10_minute()
     my_runner.run_per_10_minute()
 ```
