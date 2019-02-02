@@ -51,7 +51,7 @@ def shorturl(request):
 def red(request,shorturl):
     shorten = urlplace.objects.get(shorturl=shorturl)
 
-    return redirect(shorten)
+    return redirect(f"{shorten}")
 
 
 def randomchar(num_chars):
