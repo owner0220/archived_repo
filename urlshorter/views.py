@@ -42,7 +42,7 @@ def shorturl(request):
         data.save()
         #서버에서 데이터를 저장하고
         #매칭된 데이터를 담아서 보내준다.
-        shortrul = "https://enigmatic-dawn-88839.herokuapp.com/" + shortrul
+        shorturl = f"https://enigmatic-dawn-88839.herokuapp.com/{shorturl}" 
         return render(request,"index.html",{"url":url,"shorturl":shorturl})
     else:
         return render(request,"index.html",{"url":"인터넷 주소를 확인해주세요 ex) https://www.zuso.com"})
