@@ -50,7 +50,8 @@ def shorturl(request):
     # Create your views here.
 def red(request,shorturl):
     shorten = urlplace.objects.get(shorturl=shorturl)
-    return redirect(result)
+
+    return redirect(shorten)
 
 
 def randomchar(num_chars):
