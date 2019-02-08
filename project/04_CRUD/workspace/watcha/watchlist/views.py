@@ -5,11 +5,7 @@ from datetime import datetime
 # Create your views here.
 def movielist(request):
     mlist = Movie.objects.all()
-   
-    t1 = Movie.objects.all().order_by('-score')[:4][0]
-    t2 = Movie.objects.all().order_by('-score')[:4][1]
-    t3 = Movie.objects.all().order_by('-score')[:4][2]
-    return render(request,"watchlist/mlist.html", {"mlist":mlist,"t1":t1,"t2":t2,"t3":t3})
+    return render(request,"watchlist/mlist.html", {"mlist":mlist})
     
     
 def mdetail(request,id):
@@ -57,3 +53,9 @@ def delete(request,id):
     movie = Movie.objects.get(id=id)
     movie.delete()
     return redirect("/movies/")
+    
+def first(request):
+    t1 = Movie.objects.all().order_by('-score')[:4][0]
+    t2 = Movie.objects.all().order_by('-score')[:4][1]
+    t3 = Movie.objects.all().order_by('-score')[:4][2]
+    return render(request,"watchlist/main.html",{"t1":t1,"t2":t2,"t3":t3})
