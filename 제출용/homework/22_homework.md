@@ -10,7 +10,7 @@
 
 
 
-**정답 : TextField()**
+**정답 : FileField()**
 
 
 
@@ -23,8 +23,8 @@
 
 **정답 :**
 
-- MEDIA_URL = "/uploaded_files/"                                 **URL에서 요청할 주소**
-- MEDIA_ROOT = os.path.join(BASE_DIR,"media")      **파일이 저장될 위치**
+- MEDIA_URL = "/uploaded_files/"                                                **URL에서 요청할 주소**
+- MEDIA_ROOT = os.path.join(BASE_DIR,"uploaded_files")      **파일이 저장될 위치**
 
 
 
@@ -38,4 +38,10 @@
 
 **정답 :**
 
-STATICFILES_DIRS  = os.path.join(BASE_DIR,"assets")   **파일 위치를 등록해줘야 한다.**
+STATICFILES_DIRS  = [
+
+os.path.join(BASE_DIR,"assets"),
+
+]
+
+**파일 위치를 등록해줘야 한다.**
