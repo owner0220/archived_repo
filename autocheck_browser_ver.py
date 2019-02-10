@@ -6,6 +6,7 @@ import intra
 excutelogfile = open("출석.txt",'a',encoding='utf-8')
 start = datetime.datetime.now()
 excutelogfile.write(f"{start.hour}:{start.minute} ||  출근 출석 프로그램 시작\n")
+intra.login()
 
 
 #현재 시간이 8시 ~ 9시 사이면 실행해라   #이외에는 18시 01분 이후에 실행 시켜라
