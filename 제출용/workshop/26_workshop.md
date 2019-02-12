@@ -31,6 +31,12 @@ class Student(models.Model):
 from django import forms
 from .models import Student
 
+##폼을 이용했을때
+class StudentForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    age = forms.IntegerField()
+
+##모델 폼을 이용했을때
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Movie
