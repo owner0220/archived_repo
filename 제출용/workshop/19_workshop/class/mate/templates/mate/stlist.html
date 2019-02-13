@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{%block bb%}
+<h1>메인 리스트 페이지 입니다.</h1>
+{%for x in stlist%}
+<h3>{{x.name}}</h3>
+<h5>{{x.email}}</h5>
+<a href="{% url 'mate:detail' x.id%}"><button>디데일 정보</button></a>
+<a href="{% url 'mate:update' x.id%}"><button>수정하기</button></a>
+{%endfor%}
+
+{%endblock%}
