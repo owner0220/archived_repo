@@ -20,8 +20,6 @@ for _ in range(10):
                 minidx = j
         boxes[maxidx]-=1
         boxes[minidx]+=1
-
-
     for j in range(100):
         if boxes[maxidx] < boxes[j]:
             maxidx = j
