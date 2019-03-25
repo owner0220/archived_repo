@@ -1,8 +1,31 @@
 from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from dartapp.serializers import UserSerializer, GroupSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+
+
+
 
 def front(request):
+
     # url = "http://dart.fss.or.kr/api/search.json?auth=4add7af9e6cbf1210c75509e2d51ed520056fefd"
     # url = "http://dart.fss.or.kr/corp/searchCorpL.ax"
     # 회사 이름 검색 할 수 있는 사이트 URL
@@ -13,7 +36,6 @@ def front(request):
     'series': 'desc',
     'textCrpNm': '엘지씨엔에스',
     'maxResults': 100
-
 }
 
 
@@ -33,3 +55,9 @@ def front(request):
 
 
     return render(request,"front.html",q)
+
+def front(request):
+
+
+    result = {'result':qres}
+    return render(request,"front.html",result)
