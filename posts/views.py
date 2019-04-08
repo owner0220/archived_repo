@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect
 from .forms import Postform
+from .models import Post
 
 # Create your views here.
 def list(request):
-    return render(request,"posts/list.html")
+    posts = Post.objects.all()
+    
+    return render(request,"posts/list.html",{'posts':posts})
     
     
 def create(request):
