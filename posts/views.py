@@ -36,3 +36,7 @@ def update(request,id):
         form = Postform(instance=post)
     return render(request,'posts/form.html',{'form':form})
     
+def delete(request,id):
+    post = Post.objects.get(id=id)
+    post.delete()
+    return redirect("posts:list")
