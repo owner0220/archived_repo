@@ -5,14 +5,13 @@ from .models import Post
 # Create your views here.
 def list(request):
     posts = Post.objects.all()
-    
     return render(request,"posts/list.html",{'posts':posts})
     
     
 def create(request):
     #1. get 방식으로 데이터를 입력할 form요청
     if request.method == "POST":
-        form = Postform(request.POST)
+        form = Postform(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return redirect("posts:list")
