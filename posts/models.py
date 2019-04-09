@@ -13,4 +13,6 @@ class Post(models.Model):
             format='JPEG',
             options={'quality':90},
         )
-    
+
+class Image(models.Model):
+    post = models.ForeignKey(Post)
