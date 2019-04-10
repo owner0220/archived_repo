@@ -18,12 +18,25 @@
     
     <div class="navbar-nav">
         <ul class="nav justify-content-end">
+            {% if user.is_authenticated %}
+            <h1>{{user.last_name}}</h1>
             <li class="nav-item mr-4">
                 <a class="nav-link" href="{% url 'posts:create' %}">new</a>
             </li>
             <li class="nav-item mr-4">
                 <a class="nav-link" href="{% url 'posts:list' %}">Mypage</a>
             </li>
+            <li class="nav-item mr-4">
+                <a class="nav-link" href="{% url 'accounts:logout' %}">logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item mr-4">
+                <a class="nav-link" href="{% url 'accounts:login' %}">login</a>
+            </li>
+            <li class="nav-item mr-4">
+                <a class="nav-link" href="{% url 'accounts:signup' %}">signup</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
     </nav>

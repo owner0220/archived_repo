@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'posts',
     'bootstrap4',
     'imagekit',
+    'accounts',
 ]
 
 MIDDLEWARE = [
