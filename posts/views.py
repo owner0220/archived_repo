@@ -1,13 +1,15 @@
 from django.shortcuts import render,redirect
-from .forms import Postform,ImageForm
-from .models import Post,Image
+from .forms import Postform,ImageForm,CommentForm
+from .models import Post,Comment,Like
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+from django.db.models.query import EmptyQuerySet
 
 # Create your views here.
 def list(request):
     posts = Post.objects.all()
-    posts_img = Image.objects.all()
-    return render(request,"posts/list.html",{'posts':posts,'posts_img':posts_img})
+    comment_form = CommentForm()
+    return render(request,"posts/list.html",{'posts':posts,'comment_form':comment_form})
     
 @login_required    
 def create(request):
@@ -52,8 +54,47 @@ def update(request,id):
     else:
         return redirect('posts:list')
     
-    
+@login_required 
 def delete(request,id):
     post = Post.objects.get(id=id)
     post.delete()
     return redirect("posts:list")
+
+@login_required
+@require_POST
+def comment_create(request,post_id):
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST,request.user,Post.objects.get(id=post_id))
+        if comment_form.is_valid():
+            comment = comment_form.save(commit = False)
+            comment.user = request.user
+            comment.post = Post.objects.get(id=post_id)
+            comment.save()
+            return redirect("posts:list")
+    
+@login_required 
+def comment_delete(request,post_id):
+    comment = Comment.objects.get(id=post_id)
+    if comment.user == request.user:
+        comment.delete()
+    return redirect("posts:list")
+    
+@login_required
+def like(request,post_id):
+    post = Post.objects.get(id=post_id)
+    user = request.user
+    
+    if user in post.likes.all():
+        post.likes.remove(user)
+    else:
+        post.likes.add(user)
+    return redirect('posts:list')
+    
+    # if isinstance(post.like_set.filter(user=user),EmptyQuerySet) == True:
+    #     like = post.like_set.filter(user=user)
+    #     print("!!!2222222222222")
+    #     like.delete()
+    # else:
+    #     like = Like(user=user,post=post)
+    #     like.save()
+    

@@ -22,7 +22,6 @@ def login(request):
             auth_login(request,form.get_user())
             return redirect("posts:list")
         # raise("123")
-        pass
     else:
         form = AuthenticationForm()
     return render(request,"accounts/form.html",{'form':form})

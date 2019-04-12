@@ -21,7 +21,7 @@
 
 
 
-<div class="card mb-3" style="max-width: 18rem;">
+<div class="card mb-3 col-6 p-0" style="">
   <div class="card-header">
     <div class="container">
           <div class="row">
@@ -62,11 +62,62 @@
   <div class="card-body text-dark m-0 pt-0">
     <h5 class="card-title">Dark card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    {% if user in post.likes.all %}
+      <i class="fas fa-heart" style="color:#ed4956"></i>
+      <a href="{% url 'posts:like' post.id %}">좋아요 취소</a>
+    {% else %}
+      <i class="far fa-heart"></i>
+      <a href="{% url 'posts:like' post.id %}">좋아요</a>
+    {% endif %}
+    <p class="card-text">
+      좋아요 {{post.likes.count}} 개
+    </p>
+    
+  </div>
+  
+  <div class="card-body">
+    {% for comment in post.comment_set.all %}
+      <div class="card-text d-inline"><strong>{{comment.user}}</strong> {{comment.content}}</div>
+      {% if comment.user == user %}
+      <a class="btn btn-danger d-inline" href="{% url 'posts:comment_delete' comment.id %}">x</a>
+      <br>
+      {% endif %}
+      <br>
+      {% empty %}
+      <p>댓글이 없네?</p>
+      
+    {% endfor %}
+    
     {% if post.user == user %}
       <a href="{% url 'posts:update' post.id %}" class="btn btn-warning">수정</a>
       <a href="{% url 'posts:delete' post.id %}" class="btn btn-danger">삭제</a>
     {% endif %}
+    
   </div>
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="card-body">
+    <form action="{% url 'posts:comment_create' post.id%}" method="post">
+      {% csrf_token %}
+      {{comment_form.content}}
+
+      <input type="submit" value="Submit"/>
+    </form>
+    
+  </div>
   
 </div>
