@@ -1,10 +1,11 @@
-{% extends "base.html" %}
-{% block bb %}
+{% extends 'base.html' %}
 
-<div class="container mt-5">
-{% for post in posts %}
-  {% include 'posts/_post.html' %}
-
-{% endfor %}
-</div>
+{% block body %}
+    <div class="row">
+        <div class="col-6">
+            {% for post in posts %}
+                {% include 'posts/_post.html' %}
+            {% endfor%}
+        </div>
+    </div>
 {% endblock %}
