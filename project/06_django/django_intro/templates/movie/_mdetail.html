@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="">
+        <img src="{{post.poster_url}}" class="card-img" alt="...">
+      </div>
+      <div class="">
+        <div class="card-body">
+          <div class="d-flex justify-content-xl-between">
+              <div class="">
+                  <h5 class="card-title">{{post.title}} | </h5>
+                  <h6>{{post.genre}}</h6>
+              </div>
+              <div class="">
+              <div class="btn btn-success">{{post.score}}</div>
+              </div>
+          </div>
+          
+          <p class="card-text">{{post.description}}</p>
+          <a class="btn btn-danger" href="{% url 'movies:delete' post.id %}">삭제</a>
+          <a class="btn btn-warning" href="{% url 'movies:update' post.id %}">수정</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
