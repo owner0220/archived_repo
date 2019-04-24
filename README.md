@@ -20,5 +20,5 @@ pjt_10/
     manage.py
 ```
 
-![api_request](.\api_request.PNG)
+![api_request](https://github.com/owner0220/10_api/blob/master/api_request.PNG)
 
