@@ -20,3 +20,5 @@ pjt_10/
     manage.py
 ```
 
+![api_request](.\api_request.PNG)
+
