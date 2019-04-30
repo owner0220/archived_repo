@@ -10,11 +10,11 @@
 - **프레임웍 :** Django, Bootstrap
 - **환경 :** C9, bash
 
-
-
-
+---
 
 ---
+
+
 
 #### 세부내용
 
@@ -31,7 +31,7 @@
 - 영화 진흥 위원회 오픈 API
 - 네이버 영화 검색 API
 - 해외 영화 정보 API (The movie DB)
-- **라이브러리 : **
+- **사용 라이브러리**
   - 크롤링
     - requests, beautifulsoup4
   - REST API
