@@ -7,6 +7,9 @@ from .forms import CustomUserCreationForm
 def account_list(request):
     return HttpResponse("<h1>여기는 어카운트 페이지</h1>")
     
+def user_detail(request,id):
+    return render(request,"accounts/user_detail.html")
+
 def sign_up(request):
     if request.method=="POST":
         form = CustomUserCreationForm(request.POST)
