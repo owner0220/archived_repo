@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'movies',
     'autofixture',
     'bootstrap4',
+    'django_seed',
 ]
 
 MIDDLEWARE = [

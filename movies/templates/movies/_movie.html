@@ -1,8 +1,22 @@
 <!--{% for movie in movies %}-->
 <!--{% endfor %}-->
 <!--지금 핫한 순위대로 포스터 노출-->
-<img src="https://images-na.ssl-images-amazon.com/images/I/81Mi4-Qt4wL._SY445_.jpg" class="rounded mx-auto img-thumbnail" alt="이미지1">
+<div class="row">
+<div class="col-3">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81Mi4-Qt4wL._SY445_.jpg" class="rounded mx-auto img-thumbnail" alt="이미지1">
+</div>
+<div class="col-3">
 <img src="https://images-na.ssl-images-amazon.com/images/I/81Mi4-Qt4wL._SY445_.jpg" class="rounded mx-auto img-thumbnail" alt="이미지2">
+</div>
+<div class="col-3">
 <img src="https://images-na.ssl-images-amazon.com/images/I/81Mi4-Qt4wL._SY445_.jpg" class="rounded mx-auto img-thumbnail" alt="이미지3">
+</div>
 
-
+{% for movie in movies %}
+    {% if movie.poster_url %}
+    <div class="col-3">
+        <img class="w-100" src={{movie.poster_url}} alt="">
+    </div>
+    {% endif %}
+{% endfor %}
+</div>

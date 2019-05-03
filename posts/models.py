@@ -1,6 +1,7 @@
 from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
+from django.conf import settings
 
 # Create your models here.
 
@@ -13,6 +14,7 @@ class Hashtag(models.Model):
     
 class Post(models.Model):
     content = models.CharField(max_length=100)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     post_img = ProcessedImageField(
                 upload_to='posts/images', #저장 위치
                 processors=[ResizeToFill(600,600)], #크기지정
@@ -22,5 +24,6 @@ class Post(models.Model):
     post_geo = models.CharField(max_length=100)
     hashtags = models.ManyToManyField(Hashtag, blank=True)
     top = models.BooleanField()
+    
 
     
