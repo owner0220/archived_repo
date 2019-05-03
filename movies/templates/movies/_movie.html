@@ -15,7 +15,9 @@
 {% for movie in movies %}
     {% if movie.poster_url %}
     <div class="col-3">
+        <a href="{% url 'movies:movie_detail' movie.id %}">
         <img class="w-100" src={{movie.poster_url}} alt="">
+        </a>
     </div>
     {% endif %}
 {% endfor %}

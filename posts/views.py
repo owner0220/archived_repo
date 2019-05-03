@@ -8,10 +8,12 @@ from django.contrib.auth import get_user_model
 # from django.http import HttpResponse
 # Create your views here.
 def post_lists(request):
-    return render(request,"posts/posts.html")
+    posts = Post.objects.all()
+    return render(request,"posts/posts.html",{"posts":posts})
 
 def post_detail(request,p_id):
-    return render(request,"posts/post_detail.html")
+    post = get_object_or_404(Post,pk=p_id)
+    return render(request,"posts/post_detail.html",{"post":post})
     
 
 @login_required

@@ -9,6 +9,10 @@ def movie_lists(request):
     movies = Movie.objects.all()
     return render(request,"movies/movie_list.html",{"movies":movies})
     
+def movie_detail(request,id):
+    movie = get_object_or_404(Movie,pk=id)
+    return render(request,"movies/movie_detail.html",{"movie":movie})
+
 @permission_required('movies.movie')
 def movie_create(request):
     if request.method=="POST":
