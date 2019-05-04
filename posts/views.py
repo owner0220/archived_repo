@@ -21,8 +21,10 @@ def post_create(request):
     if request.method == "POST":
         form = PostForm(request.POST,request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect("/")
+            ob = form.save(commit=False)
+            ob.user = request.user
+            ob.save()
+            return redirect("posts:post_lists")
     else:
         form = PostForm()
     return render(request,"posts/form.html",{'form':form})
