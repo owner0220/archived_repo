@@ -63,12 +63,14 @@ def movie_update(json_object):
         MvDB = get_req_json(theMvDB).get("results")
         DBPoster = "f"
         summary = "f"
+        release_date=""
         if len(MvDB)!=0:
             MvDB = MvDB[0]
             pospath=MvDB.get('poster_path')
             if pospath != None:
                 DBPoster = "https://image.tmdb.org/t/p/w500"+MvDB.get('poster_path')
             summary = MvDB.get('overview')
+            release_date=MvDB.get('release_date')
         
         poster_url="f"
         if DBPoster =="f":
@@ -79,7 +81,7 @@ def movie_update(json_object):
         try:
             Movie.objects.get(title=title)
         except:
-            Movie(title = title,audi=audi,summary=summary,poster_url=poster_url).save()
+            Movie(title = title,audi=audi,summary=summary,poster_url=poster_url,release_date=release_date).save()
         
         print(title)
         print(audi)
@@ -90,7 +92,7 @@ def movie_update(json_object):
         
         
 def past_year_update(year):
-    if year < date.today().year:
+    if year <= date.today().year:
         for s in find_year_sundays(year):
             korean = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key="+os.environ['kk']+"&targetDt=" + "".join(str(s).split('-'))
             print(s,"=============")
