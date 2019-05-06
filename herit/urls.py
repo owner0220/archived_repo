@@ -9,5 +9,6 @@ urlpatterns = [
     path('movies/', include("movies.urls")),
     path('posts/',include("posts.urls")),
     path('', views.top_rank),
+    path('api-auth/', include('api_v1.urls')),
     
 ]
