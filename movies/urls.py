@@ -8,6 +8,6 @@ urlpatterns = [
     path('<int:id>/', views.movie_detail,name="movie_detail"),
     path('<int:id>/delete/', views.movie_delete,name="movie_delete"),
     path('<int:id>/update/', views.movie_update,name="movie_update"),
-    path('test/', views.movie_api_update,name="test"),
+    path('test/<int:year>', views.movie_api_update,name="test"),
     
 ]

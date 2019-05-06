@@ -4,15 +4,12 @@ from django.core.files import File
 from django.conf import settings
 
 
-media_root = settings.MEDIA_ROOT
+media_dir = settings.MEDIA_ROOT
 
 
-# print(media_root)
 def top_rank(request):
     thisu = Movie.objects.all()
-    print("111111")
-    with open(media_root+'\\test.txt','w') as f:
+    with open(media_dir+'/recent_update.txt','w') as f:
         myfile = File(f)
-        myfile.write('\nis this writing to text??')
-        print("22222")
+        myfile.write('is this writing to text??')
     return render(request,"top_rank.html", {"thisu":thisu})

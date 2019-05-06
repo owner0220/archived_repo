@@ -49,6 +49,8 @@ def movie_update(request,id):
         return render(request,"movies/form.html",{"form":form})
 
 @permission_required('movies.movie')                
-def movie_api_update(request):
-    Movie_update()
-    return HttpResponse("test")
+def movie_api_update(request,year):
+    if past_year_update(year):
+        return HttpResponse("Process is ~ing")
+    else:
+        return HttpResponse("Fail")
