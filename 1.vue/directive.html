@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{number}}</h1>
+        <button @click="decrement">감소</button>
+        <button @click="increment">증가</button>
+        <h1 v-show="visible">{{message}}</h1>
+        <h1 v-if="value > 5">value가 5보다 큽니다.</h1>
+        <h1 v-else-if="value > 3">value 5보다 작고 3보다 큽니다.</h1>
+        <h1 v-else>value가 3보다 작습니다.</h1>
+
+        <ul>
+            <li v-for="(todo, i) in todos">{{i * 3}} - {{todo.text}}</li>    
+        </ul>
+        <input type="checkbox" v-model="pa">
+        <br>
+        <img :src="pa ? padak : bongchu">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                number:0,
+                message:"안녕하세요",
+                visible:true,
+                value: 10,
+                todos:[
+                    {text:"vue공부하기"},
+                    {text:"django공부하기"},
+                ],
+                pa:false,
+                bongchu:"http://mblogthumb2.phinf.naver.net/MjAxODA0MDFfNzUg/MDAxNTIyNTkzMDYyNDU4.I8ANIPBsONwMS_wInDzKAqUHhtQbK2ze-ISK4sjPPJsg.xe376nyqcgTpsfIaSrZ_UkovGVHHU4Dqush7B8RnFdwg.JPEG.kimnam124/IMG_3518.JPG?type=w800",
+                padak:"http://www.simbata.co.kr/img_src/s600/1201/12010816.jpg",
+            },
+            methods:{
+                increment:function(){
+                    this.number++
+                },
+                decrement:function(){
+                    this.number--
+                }    
+            }
+        })
+    </script>
+</body>
+</html>
