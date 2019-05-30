@@ -18,7 +18,7 @@ class Block(object):
         # 이전 block의 hash를 가져와서 다시 hash를 만든다.
         # 즉, 새롭게 hash 값을 만들 때 이전 블록의 hash 값을 참조해서 만들기 때문에 이를 활용해 무결성이 확보된다.
         sha.update(new_str_bin.encode())
-        
+        print(sha.hexdigest())
         return sha.hexdigest()
         
     # 링크드 리스트 처럼 시작이 되는 헤드노드가 필요한데
