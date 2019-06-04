@@ -1,28 +1,3 @@
-#블록체인의 구조?
-#최초의 블록부터 시작해서 바로 앞의 블록에 대한 링크를 가지고 있는 형태
-#이러한 형태를 여러 노드들이 같은 정보, 장부를 갖는지 확인을 한다.
-
-
-# 블록체인의 특징
-# 1. 블록의 구조
-# - Tracsaction
-# - 전블록 hash
-# - Time
-# 2. 합의 과정
-# - 분산화된 환경에서 자료 동기화
-
-# 여기에는
-# 블록 구조들
-# Transaction 형태
-# chain과 연결법들이 있을 것이다.
-
-# 먼저 블록은 JSON 형태로 저장
-# index : 몇 번째 블록인지
-# Timestamp : 언제 블록이 생성되었는지
-# Transaction : 거래 목록
-# Proof : 마이닝의 결과
-# Prev_hash : 블록의 무결성을 검증
-
 import hashlib
 import json
 from time import time
