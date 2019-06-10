@@ -54,8 +54,6 @@ test        /   qqqq123!
 
 ### 샘플 이미지
 
-![watcha](C:/Users/h/Desktop/portfolio/watcha.gif)
+![watcha](./watcha.gif)
 
 
-
-#### 
