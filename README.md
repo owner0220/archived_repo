@@ -46,14 +46,13 @@
 test        /   qqqq123!
 ```
 
-#### **PPT :**  [바로가기](https://docs.google.com/presentation/d/1qQ0z4cxDtFp-fiubJw3VYT-mG6mh5_AgcudOraOvoBA/edit?usp=sharing)
-
-> URL https://docs.google.com/presentation/d/1qQ0z4cxDtFp-fiubJw3VYT-mG6mh5_AgcudOra0OvoBA/edit?usp=sharing
 
 
+## 학습_CodeShadowing
 
-### 샘플 이미지
+```
 
-![watcha](./watcha.gif)
+```
+
 
 
