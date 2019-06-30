@@ -11,3 +11,9 @@
 /etc/profile
 /etc/profile.d/
 /etc/bash.bashrc/
+
+
+
+
+
+https://opentutorials.org/course/2598/14210
