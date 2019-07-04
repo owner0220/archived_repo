@@ -18,3 +18,16 @@
 
 
 https://opentutorials.org/course/2598/14210
+
+
+### WGET
+```
+wget -c --tries=0 --retry-connrefused --timeout=2 --wait=1 \
+http://www.schmidp.com/bigfile
+```
+설명
+- c tells wget to continue a download, so you can stop wget and restart it later without downloading the whole file again.
+– tries=0 means that the download will be tried indefinitely if the connection breaks.
+– retry-connrefused forces wget to retry even if the server is currently not listening.
+– timeout=2 tells wget to reconnect if no data is received for more than 2 seconds.
+– wait=1 means wget will sleep for one second before it reconnects.
