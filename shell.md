@@ -31,3 +31,5 @@ http://www.schmidp.com/bigfile
 – retry-connrefused forces wget to retry even if the server is currently not listening.
 – timeout=2 tells wget to reconnect if no data is received for more than 2 seconds.
 – wait=1 means wget will sleep for one second before it reconnects.
+
+shell은 단순히 사용자의 명령을 실행시키는 
