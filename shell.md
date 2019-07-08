@@ -33,3 +33,11 @@ http://www.schmidp.com/bigfile
 – wait=1 means wget will sleep for one second before it reconnects.
 
 shell은 단순히 사용자의 명령을 실행시키는 
+
+### 텍스트 파일을 쉘 변수에 집어 넣는 방법
+```
+#!/bin/bash
+value=$(<config.txt)
+echo "$value"
+```
+
