@@ -41,3 +41,13 @@ value=$(<config.txt)
 echo "$value"
 ```
 
+shell은 일반 프로그래밍 언어와 달리 subshell 부분이 끝나고 나면 subshell에서 사용한 변수들이 모두 날아간다.
+(subshell 이전에 변수를 선언해서 사용해도 마찬가지)
+그래서 while 문을 쓸 때도 for 문으로 대체 해서 쓰거나
+```
+while read line
+do
+
+done < $input
+```
+이러한 형태로 사용한다.
