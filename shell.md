@@ -51,3 +51,63 @@ do
 done < $input
 ```
 이러한 형태로 사용한다.
+
+
+### ^M 개행 문자 삭제하는 방법
+```
+샘플
+cat -v file.log
+abcd^M
+bcde^M
+cdef^M
+defg^M
+```
+
+1. tr
+```
+#방법 1
+tr -d '^M' < file.log
+#방법 2
+tr -d '\015' < file.log
+#변경된 내용 저장
+tr -d \015' < file.log > file.tr.log
+```
+2. sed
+```
+#방법 1
+sed 's/^M//g' file.log
+#방법 2
+sed 's/\015//g' file.log
+#변경된 내용 저장
+sed -i 's/^M//g' file.log
+```
+3.awk
+```
+#방법 1
+awk 'sub(/^M/,"");' file.log
+#방법 2
+awk 'sub(/\015/,"");' file.log
+#변경된 내용 저장
+awk 'sub(/\015/,"");' file.log > file.awk.log
+```
+4.perl
+```
+#방법 1
+perl -p -e 's/^M//g' file.log
+#방법 2
+perl -p -e 's/\015//g' file.log
+#변경된 내용 저장
+perl -pi -e 's/\015//g' file.log
+```
+5.vi
+```
+#방법 1
+:%s/^M//
+#방법 2
+:%s/\015//
+#방법 3
+:set ff=unix
+:wq
+```
+
+
