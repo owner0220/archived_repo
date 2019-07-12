@@ -22,3 +22,9 @@ SELECT ID || '|' || NAME || '|' || PHONENUMBER || '|' || POSITION FROM A;
 SELECT ID || '|' || NAME || '|' || PHONENUMBER || '|' || POSITION
 FROM A;
 ```
+
+### 발생할 수 있는 에러로그
+```
+ORA-00923 : FROM 키워드가 있어야 할 곳에 없습니다.
+```
+- 하나의 칼럼에 하나의 Alias를 쓸수 있다. 여러 칼럼을 하나의 칼럼으로 만들기 때문에 SELECT 문에 있는 AS를 모두 제거하거나 하나만 남겨야 한다.
