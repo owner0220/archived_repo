@@ -6,6 +6,19 @@
 - 다운로드만 빨리 하고 싶다면 wget을 써라
 - wget이 지원하지 않는 프로토콜이나 다른것과 상호작용을 하고 싶다면 curl을 쓰면 된다.
 
+### 속도 근거
+```
+$ time curl -s -o / dev / null https://www.google.com/a.html 
+```
+- real 0m0.744s 
+- user 0m0.092s 
+- sys 0m0.016s
+```
+$ time wget -q -o/dev/null --no-alpn https://www.google.com/a.html
+```
+- real 0m0.507s 
+- user 0m0.016s 
+- sys 0m0.008s 
 
 공통점
 - FTP, HTTP(s)를 사용해서 파일을 다운로드 받을 수 있다.
