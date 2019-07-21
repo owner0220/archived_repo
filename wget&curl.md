@@ -23,7 +23,8 @@ curl
 ```
 # 단일 파일 다운로드
 curl http://www.centos.org
-
+```
+```
 # -o는 다운로드한 파일이름을 지정한 이름으로 다운로드 / -O는 URL의 파일 이름으로 저장
 curl -o mygettext.html http://www.gnu.org/software/gettext/manual/gettext.html
 
