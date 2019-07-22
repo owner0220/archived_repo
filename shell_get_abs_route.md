@@ -1,7 +1,7 @@
 ## 필독!!!!!
 > https://stackoverflow.com/questions/35006457/choosing-between-0-and-bash-source/35006505#35006505 참조
 # bash 쉘 절대 경로 찾을 때 이것을 사용해라!!
-${BASH_SOURCE[0]}  or  $BASH_SOURCE
+** ${BASH_SOURCE[0]}  or  $BASH_SOURCE **
 - 이 변수는 모든 경우의 수의 시나리오에서도 잘 동작한다.
 - $0은 사용자의 실행 상황에 따라 달라지기도 한다.
 ```
@@ -48,7 +48,6 @@ $ . ./foo
 ### ${BASH_SOURCE[0]} vs $BASH_SOURCE :
 - Bash는 array variable using scalar notation: instead of writing `$(arr[0])`, you can write `$arr`
 - **SC2128: Expanding an array without an index only gives the first element.**
-- 
 
 
 
