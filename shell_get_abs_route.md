@@ -1,3 +1,57 @@
+## 필독!!!!!
+> https://stackoverflow.com/questions/35006457/choosing-between-0-and-bash-source/35006505#35006505 참조
+# bash 쉘 절대 경로 찾을 때 이것을 사용해라!!
+${BASH_SOURCE[0]}  or  $BASH_SOURCE
+- 이 변수는 모든 경우의 수의 시나리오에서도 잘 동작한다.
+- $0은 사용자의 실행 상황에 따라 달라지기도 한다.
+```
+$0 can be set to an arbitrary value by the caller.
+On the flip side, $BASH_SOURCE can be empty, if no named file is involved; e.g.:
+```
+```
+echo 'echo "[$BASH_SOURCE]"' | bash
+```
+```
+# 예시1
+echo $BASH_SOURCE
+```
+```
+# 예시1 결과 (공백 출력)
+
+```
+```
+# 예시2
+echo $0
+```
+```
+# 예시2 결과
+-bash
+```
+- 확실한 예시로 Script `foo`:
+```
+#!/bin/bash
+echo "[$0] vs. [${BASH_SOURCE[0]}]"
+```
+---
+```
+$ bash ./foo
+[./foo] vs. [./foo]
+
+$ ./foo
+[./foo] vs. [./foo]
+
+$ . ./foo
+[bash] vs. [./foo]
+```
+※ `$0`과 `BASH_SOURCE`를 보면 알 수 있듯 POSIX 쉘 사양의 일부인 BASH에 해당하는 내용이다.
+
+### ${BASH_SOURCE[0]} vs $BASH_SOURCE :
+- Bash는 array variable using scalar notation: instead of writing `$(arr[0])`, you can write `$arr`
+- **SC2128: Expanding an array without an index only gives the first element.**
+- 
+
+
+
 ### 쉘에서 폴더의 절대 위치 찾기
 abspath=$(cd ${0%/*}&&echo $PWD/)
 
