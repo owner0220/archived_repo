@@ -1,7 +1,0 @@
-# 공동 작업 환경 만들기
- - [New repository]
- - Repository 이름 설정, Initialize this repository with a README 체크박스 체그
- - Settings->Collaborators에서 함께 할 GitHub 사용자명을 입력하고 Add collaborator 클릭
- - 상대방에게 요청 메일이 발송되면서 승인 대기 상태가 됩니다.
-   (상대 사용자들은 Repository 요청메일을 열어 링크를 클릭)
-> https://backlog.com/git-tutorial/kr/intro/intro1_1.html
