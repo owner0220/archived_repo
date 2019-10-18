@@ -28,7 +28,7 @@ if [ $VMEXISTSCODE -eq 1 ]; then
     PROXYENV="$PROXYENV --engine-env NOPROXY=$NOPROXY"
   fi
 
-  **"${DOCKERMACHINE}" create -d virtualbox $PROXYENV "${VM}"**
+  *"${DOCKERMACHINE}" create -d virtualbox $PROXYENV "${VM}"*
 fi
 ...생략
 ```
