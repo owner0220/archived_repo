@@ -1,22 +1,22 @@
 ### NAT (Network Address Translation)
 
-![NAT](..\images\NAT.png)
+![NAT](.\images\NAT.png)
 
 ### NAT Network
 
-![NAT_Network](..\images\NAT_Network.png)
+![NAT_Network](.\images\NAT_Network.png)
 
 ### Internal Network
 
-![Internal_Network](..\images\Internal_Network.png)
+![Internal_Network](.\images\Internal_Network.png)
 
 ### Host Only Adapter
 
-![Host_Only_Adapter](..\images\Host_Only_Adapter.png)
+![Host_Only_Adapter](.\images\Host_Only_Adapter.png)
 
 ### Bridged Network
 
-![Bridged_Network](..\images\Bridged_Network.png)
+![Bridged_Network](.\images\Bridged_Network.png)
 
 
 
