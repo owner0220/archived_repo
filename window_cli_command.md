@@ -51,6 +51,7 @@
 
 ------
 
+# Cmd commands under Windows
 
 
 
@@ -132,3 +133,6 @@
 |    perfmon     |                start performance monitor                 |
 |     prompt     |                  change command prompt                   |
 |      reg       |         add/read/import/export registry entries          |
+
+
+> https://www.thomas-krenn.com/en/wiki/Cmd_commands_under_Windows
