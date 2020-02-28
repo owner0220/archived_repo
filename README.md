@@ -17,9 +17,9 @@ curl --data "{\"this\":\"is a test\"}" --header "Content-Type: application/json"
 {"this": "is a test", "received": "ok"}
 ```
 
-단, 배포시 스레딩 지원이 안되며 연결이 1개만 지원 python BaseHTTPServer 문서를 참고 하시면 됩니다.
+배포시 스레드 지원, 추가 세부 내용은 python BaseHTTPServer 문서를 참고 하시면 됩니다.
  
-리눅스 설치 후 다음 명령어로 서비스 
+리눅스 설치 후 다음 명령어로 서비스 관리 할 수 있습니다.
 ```
 sudo service server start
 ```
