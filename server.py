@@ -38,8 +38,12 @@ class Server(BaseHTTPRequestHandler):
             return
             
         # read the message and convert it into a python dictionary
-        length = int(self.headers.getheader('content-length'))
-        message = json.loads(self.rfile.read(length))
+        #length = int(self.headers.getheader('content-length'))
+        #message = json.loads(self.rfile.read(length))
+        length = int(self.headers.get('content-length'))
+        message_string = self.rfile.read(length).decode('utf-8')
+        message = json.loads(message_string) if message_string else None
+        
         
         # add a property to the object, just to mess with data
         message['received'] = 'ok'
