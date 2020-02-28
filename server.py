@@ -1,7 +1,17 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from threading import Thread
 import SocketServer
 import json
 import cgi
+
+class ThreadedHTTPServer(HTTPServer):
+    def process_request(self, request, client_address):
+        thread = Thread(target=self.__new_request, args=(self.RequestHandlerClass, request, client_address, self))
+        thread.start()
+    def __new_request(self, handlerClass, request, address, server):
+        handlerClass(request, address, server)
+        self.shutdown_request(request)
+
 
 class Server(BaseHTTPRequestHandler):
     def _set_headers(self):
