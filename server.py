@@ -3,6 +3,9 @@ from threading import Thread
 import SocketServer
 import json
 import cgi
+from urlparse import urlparse, parse_qs
+import subprocess
+import os
 
 class ThreadedHTTPServer(HTTPServer):
     def process_request(self, request, client_address):
@@ -24,9 +27,22 @@ class Server(BaseHTTPRequestHandler):
         
     # GET sends back a Hello world message
     def do_GET(self):
-        self._set_headers()
-        self.wfile.write(json.dumps({'hello': 'world', 'received': 'ok'}))
-        
+		self._set_headers()
+		query_components = parse_qs(urlparse(self.path).query)
+		print(query_components)
+		dbTableId = query_components["dbTableId"]
+		hiveDbNm = query_components["hiveDbNm"]
+		hiveTableNm = query_components["hiveTableNm"]
+		dbTableId=dbTableId[0]
+		hiveDbNm=hiveDbNm[0]
+		hiveTableNm=hiveTableNm[0]
+		print dbTableId,hiveDbNm,hiveTableNm
+		cmd = "mongo --eval \"db.getSiblingDB(\'"+hiveDbNm+"\')."+hiveTableNm+".find().toArray();\" | sed -n  \"5,\$p\" | sed 's/[\t\f]//g' "
+#		os.system("mongo --eval \"a=db.getSiblingDB('"+hiveDbNm+"')."+hiveTableNm+".find().toArray();\" | sed -n -n \"3,\$p\"")
+		#out = subprocess.Popen(['mongo', '--eval', "a=db.getSiblingDB('"+hiveDbNm+"')."+hiveTableNm+".find().toArray();"],stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+		output=subprocess.check_output(cmd,shell=True)
+		#self.wfile.write(json.dumps({'hello': 'world', 'received': 'ok'}))
+		self.wfile.write(output)
     # POST echoes the message adding a JSON field
     def do_POST(self):
         ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
