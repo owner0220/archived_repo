@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
 import SocketServer
@@ -43,10 +45,10 @@ class Server(BaseHTTPRequestHandler):
 		output=subprocess.check_output(cmd,shell=True)
 		pattern=re.compile(r'\s+')
 		output=re.sub(pattern,'',output)
-		
-		#self.wfile.write(json.dumps({'hello': 'world', 'received': 1}))
+		#dt = {'t': '하이', 'received': 1}
+		#self.wfile.write(json.dumps(dt).encode("utf8"))
 		print output
-		self.wfile.write(output)
+		self.wfile.write(output.encode('utf8'))
     # POST echoes the message adding a JSON field
     def do_POST(self):
         ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
