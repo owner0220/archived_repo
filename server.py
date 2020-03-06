@@ -6,7 +6,7 @@ import cgi
 from urlparse import urlparse, parse_qs
 import subprocess
 import os
-
+import re
 class ThreadedHTTPServer(HTTPServer):
     def process_request(self, request, client_address):
         thread = Thread(target=self.__new_request, args=(self.RequestHandlerClass, request, client_address, self))
@@ -37,11 +37,15 @@ class Server(BaseHTTPRequestHandler):
 		hiveDbNm=hiveDbNm[0]
 		hiveTableNm=hiveTableNm[0]
 		print dbTableId,hiveDbNm,hiveTableNm
-		cmd = "mongo --eval \"db.getSiblingDB(\'"+hiveDbNm+"\')."+hiveTableNm+".find().toArray();\" | sed -n  \"5,\$p\" | sed 's/[\t\f]//g' "
+		cmd = "mongo --eval \"a=db.getSiblingDB(\'"+hiveDbNm+"\')."+hiveTableNm+".find().toArray(); printjson(a)  \" | sed -n  \"5,\$p\" | sed 's/[\t\f]//g' "
 #		os.system("mongo --eval \"a=db.getSiblingDB('"+hiveDbNm+"')."+hiveTableNm+".find().toArray();\" | sed -n -n \"3,\$p\"")
 		#out = subprocess.Popen(['mongo', '--eval', "a=db.getSiblingDB('"+hiveDbNm+"')."+hiveTableNm+".find().toArray();"],stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
 		output=subprocess.check_output(cmd,shell=True)
-		#self.wfile.write(json.dumps({'hello': 'world', 'received': 'ok'}))
+		pattern=re.compile(r'\s+')
+		output=re.sub(pattern,'',output)
+		
+		#self.wfile.write(json.dumps({'hello': 'world', 'received': 1}))
+		print output
 		self.wfile.write(output)
     # POST echoes the message adding a JSON field
     def do_POST(self):
