@@ -37,7 +37,7 @@ class Server(BaseHTTPRequestHandler):
 		hiveDbNm=hiveDbNm[0]
 		hiveTableNm=hiveTableNm[0]
 		print dbTableId,hiveDbNm,hiveTableNm
-		cmd = "mongo --eval \"a=db.getSiblingDB(\'"+hiveDbNm+"\')."+hiveTableNm+".find().toArray(); printjson(a)  \" | sed -n  \"5,\$p\" | sed 's/[\t\f]//g' "
+		cmd = "mongo --eval \"a=db.getSiblingDB(\'"+hiveDbNm+"\')."+hiveTableNm+".find({},{_id:0}).toArray(); printjson(a)  \" | sed -n  \"5,\$p\" | sed 's/[\t\f]//g' "
 #		os.system("mongo --eval \"a=db.getSiblingDB('"+hiveDbNm+"')."+hiveTableNm+".find().toArray();\" | sed -n -n \"3,\$p\"")
 		#out = subprocess.Popen(['mongo', '--eval', "a=db.getSiblingDB('"+hiveDbNm+"')."+hiveTableNm+".find().toArray();"],stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
 		output=subprocess.check_output(cmd,shell=True)
