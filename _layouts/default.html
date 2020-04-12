@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+<body>
+    <!-- {% include nav.html %} in header -->
+    {% include header.html %}
+    
+    <main>
+        <div class="container">
+        {% include 0_landing.html %}
+        </div>
+        <hr>
+        <div class="container">
+        {% include 1_skillstack.html %}
+        {% include 2_historyvision.html %}
+        {% include 3_publish.html %}
+    </div>
+        <!-- {% include article.html %} -->
+        <!-- {% include section.html %} -->
+        {% include aside.html %}
+    </main>
+    
+    {% include footer.html %}
+    {% include js.html %}
+</body>
+</html>
