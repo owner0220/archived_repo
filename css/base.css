@@ -40,6 +40,24 @@
     bottom:10px;
 }
 
+.cshadow{
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, .3);
+    transition: box-shadow .3s ease-in-out;
+    border:none !important;
+}
+
+.ctransition{
+    transition: transform 100ms linear;
+}
+
+.ctransition:hover{
+    transform: translateY(3px);
+}
+
+.cshadow:hover{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .6);
+}
+
 html {
     scroll-behavior: smooth;
   }
