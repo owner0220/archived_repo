@@ -1,0 +1,6 @@
+adminsno,adminname,adminid,adminpwd,lsdelete,createdate,permission
+1,윤석진,penta_7,penta,Y,NULL,1-1
+2,박철,penta_1,penta1,Y,NULL,1-2
+1,김태윤,penta_2,penta2,Y,NULL,1-3
+2,윤석진_1,penta_7,penta,Y,NULL,2-1
+3,윤석진_3,penta_7,penta,Y,NULL,2-2
