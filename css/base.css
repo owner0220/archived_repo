@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 /* 10px = 0.625rem
 12px = 0.75rem
 14px = 0.875rem
@@ -7,6 +9,17 @@
 24px = 1.5rem
 30px = 1.875rem
 32px = 2rem */
+.blue{
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.2);
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.cnavbar{
+    padding: 13px 0px;
+}
+
+
 #about {
     padding-top: 50px;
     width:100%;
@@ -58,6 +71,7 @@
     box-shadow: 3px 3px 5px rgba(0, 0, 0, .6);
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
+    font-family: "Nanum Gothic", sans-serif !important; 
   }
