@@ -10,7 +10,7 @@ Temporal Fusion Transformer 알고리즘은 SOTA 를 기록할 만큼 트랜서�
 - 세이지 메이커의 훈련 잡을 이용하여 PyTorch Lightning 의 기본 내장된 Multi-GPUs 모델 학습을 합니다. 로컬 모드를 실행한 후에 클라우드 모드로 모델 훈련 합니다.
     - 1_Training/2.1.Run_TFT_DT_SageMaker.ipynb
 - 세이지 메이커의 훈련 잡을 이용하여 2개의 머신에서 [SageMaker DDP](https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-modify-sdp-pt-lightning.html) 를 이용하여 학습합니다. 로컬 모드를 실행한 후에 클라우드 모드에서 2개의 머신으로 모델 훈련 합니다.
-    - 1_Training/3.1Scripts2_.Run_TFT_DT_SageMaker_DDP.ipynb
+    - 1_Training/3.1.Scripts2_.Run_TFT_DT_SageMaker_DDP.ipynb
 
 # 2. 실행 방법
 ## 2.1 선수 조건
@@ -22,7 +22,7 @@ Temporal Fusion Transformer 알고리즘은 SOTA 를 기록할 만큼 트랜서�
 - 아래의 3개의 노트북을 순서대로 실행 합니다.  
     - 1_Training/1.1.Run_TFT_DT_Local.ipynb
     - 1_Training/2.1.Run_TFT_DT_SageMaker.ipynb    
-    - 1_Training/3.1Scripts2_.Run_TFT_DT_SageMaker_DDP.ipynb    
+    - 1_Training/3.1.Scripts2_.Run_TFT_DT_SageMaker_DDP.ipynb    
 
 # A. 참조
 - PyTorch Forecasting
