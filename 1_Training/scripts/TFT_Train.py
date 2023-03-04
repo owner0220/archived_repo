@@ -1,6 +1,3 @@
-print("######################")
-print("######## TEST #########")
-print("######################")
 import os
 import warnings
 
