@@ -6,6 +6,11 @@
 - Scratch-Probabilistic-Time-Series-Forecasting-with-ransformers.ipynb
 
 참조
-- Probabilistic Time Series Forecasting with 🤗 Transformers
-https://huggingface.co/blog/time-series-transformers
+- PyTorch Forecasting
+    - https://github.com/jdb78/pytorch-forecasting
 
+- Probabilistic Time Series Forecasting with 🤗 Transformers
+    - https://huggingface.co/blog/time-series-transformers
+
+Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting implemented in Pytorch
+- https://github.com/dehoyosb/temporal_fusion_transformer_pytorch
