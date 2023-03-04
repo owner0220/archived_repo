@@ -25,6 +25,8 @@ Temporal Fusion Transformer 알고리즘은 SOTA 를 기록할 만큼 트랜서�
     - 1_Training/3.1.Scripts2_.Run_TFT_DT_SageMaker_DDP.ipynb    
 
 # A. 참조
+- Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting
+    - https://arxiv.org/abs/1912.09363
 - PyTorch Forecasting
     - https://github.com/jdb78/pytorch-forecasting
 - PyTorch Lightning
