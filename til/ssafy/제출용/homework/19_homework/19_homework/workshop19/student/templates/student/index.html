@@ -1,0 +1,10 @@
+{%extends "student/base.html"%}
+
+{%block bodyblock%}
+<h1>Index Page</h1>
+    {%for s in student%}
+        <h1>{{s.name}}</h1>
+        <a href="/student/{{s.id}}/">학생 정보</a>
+        <hr>
+    {%endfor%}
+{%endblock%}

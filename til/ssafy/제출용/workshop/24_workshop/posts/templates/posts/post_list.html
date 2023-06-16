@@ -1,0 +1,11 @@
+{% extends 'posts/base.html' %}
+{% block body %}
+    {% for post in post_list %}
+        <h1>{{post.title}}</h1>
+    {% empty%}
+        <h1>게시물없어요</h1>
+    {% endfor %}
+    
+    
+    <h1>wwwwwwwwwwwwwwwwwww</h1>
+{% endblock %}

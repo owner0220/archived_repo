@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block bb%}
+<h1>사인폼 페이지 입니다.</h1>
+<form method='post' action="{% url 'mate:signup'%}">
+    {%csrf_token%}
+    이름 : <input type="text" name="name"/><br>
+    이메일 :<input type="email" name="email"/><br>
+    생일 :<input type="date" name="birthday"/><br>
+    나이 :<input type="number" name="age"/><br>
+    <input type="submit" value="Submit"/><br>
+</form>
+{%endblock%}

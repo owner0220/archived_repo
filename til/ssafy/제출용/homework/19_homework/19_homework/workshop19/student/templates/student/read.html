@@ -1,0 +1,16 @@
+{% extends "student/base.html" %}
+
+{% block bodyblock %}
+    <div class="alert alert-primary" role="alert">
+        <h3>이름 : {{student.name}}</h1>
+        <h3>E-mail : {{student.email}}</h3>
+        <h3>생일 : {{student.birthday}}</h3>
+        <h3>나이 : {{student.age}}</h3>
+    </div>
+    <button type="button" class="btn btn-danger">
+        <a href="/student/{{student.id}}/delete">삭제</a>
+    </button>
+    <button type="button" class="btn btn-warning">
+        <a href="/student/{{student.id}}/edit">수정</a>
+    </button>
+{% endblock %}
