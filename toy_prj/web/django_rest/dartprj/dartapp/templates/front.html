@@ -1,0 +1,7 @@
+{% extends "base.html"%}
+
+{% block body %}
+{% for x in txt %}
+    <a href='{{x.1}}' target="_blank"><h4>title : {{x.0}}</h4> </a>
+{% endfor %}
+{% endblock %}
