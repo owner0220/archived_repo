@@ -1,0 +1,5 @@
+hivetest
+iot_colct_hist
+test_kudu_mun
+test_table
+transaction_log_colct_hist

@@ -1,0 +1,3 @@
+iot_device_data_colct_hist
+iot_device_resource_hist_stat
+iot_device_resource_stat

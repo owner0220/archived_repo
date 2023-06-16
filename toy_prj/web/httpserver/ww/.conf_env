@@ -1,0 +1,20 @@
+export MONGODB_IP=192.168.100.176
+export MONGODB_SAVE_PATH=/usr/etc/dj_mongo/MONGO_DATA/
+export CP_USER=root
+
+
+
+
+export BASE_PATH=/usr/etc/
+
+
+export DJ_PATH=${BASE_PATH}dj_migration/
+export DBLIST_PATH=${BASE_PATH}dj_migration/dblist/
+export TABLELIST_PATH=${BASE_PATH}dj_migration/tablelist/
+export LOG_PATH=${BASE_PATH}dj_migration/log/
+export TABLEDATA_PATH=${BASE_PATH}dj_migration/tabledata/
+
+
+
+
+
