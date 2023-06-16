@@ -1,0 +1,5 @@
+django==2.1.5
+gunicorn==19.9.0
+psycopg2
+django-heroku
+whitenoise

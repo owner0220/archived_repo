@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{%block body%}
+<!-- style="font-family: 'Black Han Sans', sans-serif;" -->
+<h1>메인 페이지 입니다.</h1>
+<form action="/shorter/" method="post">
+    {% csrf_token %}
+    url 입력해주세요 : <input type="text" name="url" required placeholder="http://www.zuso.com">
+    <br>
+    <input type="submit" value="쭐여 주소">
+</form>
+<h1>당신의 url = {{url}}</h1>
+<h2>당신이 줄인 것은 = {{shorturl}}</h2>
+
+{%endblock%}
