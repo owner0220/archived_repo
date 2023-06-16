@@ -1,0 +1,23 @@
+{%extends "watchlist/base.html"%}
+{%block bb%}
+<div class="row">
+    <div class="col">
+        
+        <div class="card">
+  <div class="card-body">
+<form action="/movies/create/" method="post">
+    {%csrf_token%}
+    제목 : <input type="text" name="title"><br>
+    영어제목 :<input type="text" name="title_en"><br>
+    관객수 :<input type="number" name="audience"><br>
+    개봉일 :<input type="date" name="open_date"><br>
+    장르 :<input type="text" name="genre"><br>
+    관람등급 :<input type="text" name="watch_grade"><br>
+    점수 :<input type="number" name="score"><br>
+    포스터 :<input type="text" name="poster_url"><br>
+    설명 :<input name="description"><br>
+    <input type="submit" value="제출"><br>
+</form>
+</div>
+</div>
+{%endblock%}

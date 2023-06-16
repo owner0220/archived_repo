@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{%block bb%}
+<h1>디데일 페이지 입니다.</h1>
+<h3>이름 : {{stlist.name}}</h3>
+<h5>이메일 : {{stlist.email}}</h5>
+<p>생일 : {{stlist.birthday}}</p>
+<p>나이 : {{stlist.age}}</p>
+<a href="{% url 'mate:detail' stlist.id%}"><button>디데일 정보</button></a>
+<a href="{% url 'mate:update' stlist.id%}"><button>수정하기</button></a>
+<a href="{% url 'mate:delete' stlist.id%}"><button  formmethod="post">삭제하기</button></a>
+{%endblock%}

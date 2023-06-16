@@ -1,0 +1,25 @@
+{%extends "watchlist/base.html"%}
+{%block bb%}
+
+
+<div class="card m-3">
+  <div class="card-body">
+<h1 class="d-inline">{{m.title}}</h1> 
+<h2 class="d-inline">({{m.title_en}})</h2>
+<h3 class="d-inline">|| {{m.audience}}명</h3>
+<h4>{{m.open_date}}</h4>
+<h5 class="d-inline">{{m.genre}}</h5>
+<h6 class="d-inline">{{m.watch_grade}}</h6>
+<button type="button" class="btn btn-success">{{m.score}}</button>
+<img src="{{m.poster_url}}" class="img-fluid p-5" alt="Responsive image">
+{{m.description}}
+
+  </div>
+</div>
+
+
+
+<a href="/movies/"><input class="btn btn-secondary" type="button" value="목록"/></a>
+<a href="/movies/{{m.id}}/edit"><input class="btn btn-secondary" type="button" value="수정"/></a>
+<a href="/movies/{{m.id}}/delete"><input class="btn btn-secondary" type="button" value="삭제"/></a>
+{%endblock%}
