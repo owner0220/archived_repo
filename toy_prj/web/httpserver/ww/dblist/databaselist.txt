@@ -1,0 +1,16 @@
+__ibis_tmp
+admin
+damda
+default
+ewp
+kcity
+kea
+omlet
+penta
+penta_fire
+penta_imsi
+pidb_001
+tb_meta_0001
+test
+test2
+test3
