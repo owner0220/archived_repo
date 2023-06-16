@@ -1,0 +1,6 @@
+에러 원인( 해결하기 위해 아래 리스트의 것들을 모두 확인해야 한다.)
+1. Setting파일에 모델이 저장된 앱이 installed app에 추가되어 있는지 확인한다.
+2. pip install django-bootstrap4  (설치 확인)
+3. 사용하는 html 템블릿에 
+{% load bootstrap4 %}
+{% bootstrap_form form %}
