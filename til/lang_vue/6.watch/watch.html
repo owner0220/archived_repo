@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-text="title"></h1>
+        <input v-model="question">
+        <h3>{{answer}}</h3>
+        <img v-bind:src="image">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                title:"질문을 입력해주세요",
+                question:'',
+                answer:'',
+                image:''
+            },
+            watch:{
+                question:function(){
+                    this.answer = "입력중입니다."
+                    this.getAnswer()
+                }
+            },
+            methods:{
+                getAnswer:function(){
+                    if(this.question[this.question.length-1]=="?"){
+                        console.log(this.question)
+                        this.answer = "생각중입니다."
+                        axios.get("https://yesno.wtf/api")
+                        .then((r)=>{
+                            this.answer = r.data.answer
+                            this.image = r.data.image
+                        })
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

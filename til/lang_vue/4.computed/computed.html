@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <!-- {{ const a = 10 }} // 선언문은 사용 불가능! -->
+        <!-- {{ if(true){return 10} }} // 분기문 사용불가 -->
+        {{ false ? 100 : 0 }} 
+
+        {{ message.split('').reverse().join('') }}
+        {{ message + "!!!!" }}
+        
+        <h1>{{ reverseMsg }}</h1>
+        <h1>{{ reverseMessage() }}</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                message:"hello"
+            },
+            computed:{
+                reverseMsg:function(){
+                    return Date.now()
+                }
+            },
+            methods:{
+                reverseMessage:function(){
+                    return Date.now()
+                }
+            }
+        })
+    </script>
+</body>
+</html>

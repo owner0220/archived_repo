@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+        apiKey: "AIzaSyBaQYx9uIa8N34i0ovcACDNfcb-tDvzu2M",
+        databaseURL: "https://chat-8c63a.firebaseio.com",
+        projectId: "chat-8c63a",
+    };
+    firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="currentUser.uid">
+            <!-- 로그인 했음 -->
+            <!-- 채팅칠수 있는 공간 -->
+            <span>{{currentUser.displayName}}님 안녕하세요</span>
+            <button @click="logout">로그아웃</button>
+            <br>
+            <input type="text" v-model="newMessage" @keyup.enter="createMessage">
+            <button @click="createMessage">보내기</button>
+
+            <li v-for="m in message">
+                <b>{{m.author}}</b> : {{m.content}}
+            </li>
+        </div>
+        <div v-else>
+            <!-- 로그인 안했음 -->
+            <div id="firebaseui-auth-container"></div>
+        </div>
+
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script>
+        const database = firebase.database()
+        const auth = firebase.auth() 
+        const ui = new firebaseui.auth.AuthUI(auth)
+        const app = new Vue({
+            el:"#app",
+            firebase:{
+                message:database.ref('message')
+            },
+            data:{
+                newMessage:'',
+                currentUser:{
+                    uid:'',
+                    email:'',
+                    displayName:''
+                }
+            },
+            methods:{
+                initUi:function(){
+                    const config = {
+                        signInOptions:[
+                            firebase.auth.EmailAuthProvider.PROVIDER_ID
+                        ],
+                        callbacks:{
+                            signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                                // User successfully signed in.
+                                // Return type determines whether we continue the redirect automatically
+                                // or whether we leave that to developer to handle.
+                                this.currentUser.uid = authResult.user.uid
+                                this.currentUser.email = authResult.user.email
+                                this.currentUser.displayName = authResult.user.displayName
+
+                                return false;
+                            }
+                        }
+                    }
+                    ui.start('#firebaseui-auth-container', config)
+                },
+                logout:function(){
+                    this.currentUser = {
+                        uid:'',
+                        email:'',
+                        displayName:''
+                    }
+                    auth.signOut()
+                },
+                createMessage:function(){
+                    this.$firebaseRefs.message.push({
+                        author: this.currentUser.displayName,
+                        content: this.newMessage
+                    })
+                    this.newMessage = ''
+                }
+            },
+            mounted: function(){
+                auth.onAuthStateChanged((user)=>{
+                    if(user){
+                        this.currentUser.uid = user.uid
+                        this.currentUser.email = user.email
+                        this.currentUser.displayName = user.displayName
+                    }else{
+                        this.initUi()
+                    }
+                })
+            }
+
+        })
+    </script>
+</body>
+</html>
