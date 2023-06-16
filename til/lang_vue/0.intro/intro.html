@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 여기는 html -->
+    <div id="app">
+        {{m}}
+    </div>
+    <div id="app2" v-bind:title="message">
+        하이하이
+    </div>
+    <div id="app3">
+        <p v-if="seen">내가 보이니???</p>      
+    </div>
+    <div id="app4">
+        <h3 v-for="todo in todos">{{todo}}</h3>  
+    </div>
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click="reverse">메세지 뒤집기</button>
+    </div>
+    <div id="app6">
+        <p>{{ms}}</p>
+        <input v-model="ms">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 여기는 vue.js
+        const app = new Vue(
+            {
+                el: "#app",
+                data:{
+                    m:"안녕하세요!!!"
+                }
+            }    
+        )
+        const app2 = new Vue({
+            el: "#app2",
+            data: {
+                message: `안녕하세여`
+            }
+        })
+        const app3 = new Vue({
+            el: '#app3',
+            data: {
+                seen: true
+            }
+        })
+        const app4 = new Vue({
+            el: '#app4',
+            data: {
+                todos:[
+                    "점심메뉴고르기",
+                    "점심먹기",
+                    "조퇴하기",
+                    "집에서 쉬기"
+                ]
+            }
+        })
+        const app5 = new Vue({
+            el:"#app5",
+            data:{
+                message:"안녕하세요!!"
+            },
+            methods:{
+                reverse: function(){
+                    console.log(this)
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        })
+        const app6 = new Vue({
+            el: "#app6",
+            data:{
+                ms: "Hi Vue"
+            }
+        })
+    </script>
+</body>
+</html>
